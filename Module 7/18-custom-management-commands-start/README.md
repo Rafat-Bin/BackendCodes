@@ -164,7 +164,7 @@ manage.py import_courses: error: the following arguments are required: csv_file
 Let's run the command to import courses from a sample CSV file we have created in the `csv-to-use/new-courses.csv` file.
 
 ```
-$ python manage.py import_courses path/to/csv-to-use/new-courses.csv
+$ python manage.py import_courses csv-to-use/new-courses.csv
 Successfully created 104 courses from path/to/csv-to-use/new-courses.csv
 ```
 

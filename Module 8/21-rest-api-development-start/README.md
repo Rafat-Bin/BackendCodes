@@ -111,7 +111,7 @@ We need the view logic to handle `GET` requests to list all of the exercises in 
 
 ```python
 
-from rest_framework import APIView
+from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .serializers import ExerciseSerializer

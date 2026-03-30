@@ -61,14 +61,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-if you get error try with this one:
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny"
-    ]
-}
 ```
 
 ### 2. Let's take a look at the models we have in the `workouts_app`.
@@ -209,7 +201,7 @@ class ExerciseSerializer(serializers.Serializer):
 - the `create` method is responsible for creating a new `Exercise` instance when we receive valid data. It uses the `validated_data` to create and return a new `Exercise` object.
   - the `validated_data` is the same as `cleaned_data` in Django forms. It contains the validated and deserialized data that we can use to create or update our model instances.
 - the `update` method is responsible for updating an existing `Exercise` instance when we receive
-- 
+ 
 #### 7.2 Now, let's add a `post` method to our `ExerciseAPIView` to handle `POST` requests and create new exercises through the API.
 
 ```python

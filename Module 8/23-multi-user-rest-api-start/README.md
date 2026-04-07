@@ -384,7 +384,7 @@ We're also going to add a `UserSerializer` to include the user's information in 
 ```python
 # we're not overriding the default user model, so we can just import the user model from django.contrib.auth.models
 from django.contrib.auth.models import User
-
+from django.conf import settings
 # user serializer to only include public information.
 class UserReadOnlySerializer(serializers.ModelSerializer):
     class Meta:

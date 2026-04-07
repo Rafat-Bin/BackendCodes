@@ -270,7 +270,7 @@ class WorkoutLogCreateUpdateSerializer(serializers.ModelSerializer):
             return data
 
         # we need to get the exercise from the database to check if it's a cardio exercise
-        exercise = Exercise.objects.get(id=exercise_id)
+        
         if exercise.exercise_type == "cardio" and weight_kg is not None:
             raise serializers.ValidationError("Cardio exercises cannot have a weight.")
         return data

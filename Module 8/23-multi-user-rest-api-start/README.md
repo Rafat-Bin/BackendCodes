@@ -262,7 +262,7 @@ class WorkoutLogCreateUpdateSerializer(serializers.ModelSerializer):
         ]
 
     def validate(self, data):
-        exercise_id = data.get('exercise')
+        exercise = data.get('exercise')
         weight_kg = data.get('weight_kg')
 
         # skip this if a partial update (used for patch later on)

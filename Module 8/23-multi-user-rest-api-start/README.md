@@ -350,6 +350,7 @@ Right now our workout logs aren't really associated with a user, so in the next 
 In the `WorkoutLog` model, we're going to add a new field called `user` that is a foreign key to the user model. This will allow us to associate each workout log with a specific user.
 ```python
 # ... other imports and models ...
+from django.conf import settings
 class WorkoutLog(models.Model):
     # add the user to the workout log model.
     user = models.ForeignKey(

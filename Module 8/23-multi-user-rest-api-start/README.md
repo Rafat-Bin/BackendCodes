@@ -536,7 +536,7 @@ from .permissions import IsOwnerOfResourceOrReadOnly
 # ... other imports ...
 
 class WorkoutLogAPIView(APIView):
-    permission_classes = [IsAuthenticated | IsOwnerOfResourceOrReadOnly]
+    permission_classes = [IsOwnerOfResourceOrReadOnly]
 
     # ... get_serializer_class, get, post, update,
 

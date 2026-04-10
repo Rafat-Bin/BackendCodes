@@ -73,6 +73,9 @@ It should look something like below, this shows that:
 
 ### 3. Let's make a new serializer that includes the workout logs, in the file `workouts_app/serializers.py`.
 
+
+
+
 #### 3.1 Add the serializer for the workout detail that includes the workout logs.
 We're going to add a `WorkoutDetailReadOnlySerializer` that includes the workout logs and use that serializer in the custom action.
 
@@ -88,6 +91,26 @@ class WorkoutDetailReadOnlySerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'date', 'logs']
 
 # ... other serializers ...
+
+```
+
+After that lets update WorkoutViewSet from views.py from serializer = WorkoutSerializer(workout) to serializer = WorkoutDetailReadOnlySerializer(workout) so workoutlog.
+```python
+from rest_framework.decorators import action
+
+# ... other imports ...
+
+class WorkoutViewSet(viewsets.ModelViewSet):
+    # ... other code ...
+    permission_classes = [IsAuthenticated]
+    queryset = Workout.objects.all()
+    serializer_class = WorkoutSerializer
+
+    @action(detail=True, methods=['get'], url_path='detail')
+    def workout_logs(self, request, pk=None):
+        workout = self.get_object()
+        serializer = WorkoutDetailReadOnlySerializer(workout)
+        return Response(serializer.data)
 ```
 Now if you go to the endpoint `/workouts/{id}/detail/` you should see the workout logs ids in the response. As shown below.
 

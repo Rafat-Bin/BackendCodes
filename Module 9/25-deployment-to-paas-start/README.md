@@ -1,6 +1,6 @@
 # Deployment on a PaaS provider
 
-In this last example for the course we're goign to walk through how to deploy a django app to a PassProivder. Since [REnder.io](https://render.com/) is a popular and easy to use PaaS provider, which a free tier that is sufficient for small projects, we're going to use Render for this example. The process for deploying to other PaaS providers is similar, so you can use the same steps and just adjust for the specific provider you're using.
+In this last example for the course we're goign to walk through how to deploy a django app to a PassProivder (Platform as a Service). Since [REnder.io](https://render.com/) is a popular and easy to use PaaS provider, which a free tier that is sufficient for small projects, we're going to use Render for this example. The process for deploying to other PaaS providers is similar, so you can use the same steps and just adjust for the specific provider you're using.
 
 We're going to take oiur existing announcements project (from earlier in the course) to Render and deploy it so that it's accessible on the internet. This will involve some changes to our code to prepare it for deployment, as well as some configuration on the Render side to get it up and running.
 

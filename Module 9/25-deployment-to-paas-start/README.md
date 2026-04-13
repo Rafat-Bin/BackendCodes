@@ -165,18 +165,18 @@ git push -u origin main
 
 or use vs code git extension
 
-1. Initialize Git
+1. Initialize Git:
 Click the Source Control icon (left sidebar),
 Click “Initialize Repository”
 
-2. Stage your files
+2. Stage your files:
 You’ll see a list of files.
 Click the “+” (stage all) button
 
-3. Commit your code
+3. Commit your code:
 Type a message like: Initial commit
 
-4.Publish to GitHub
+4.Publish to GitHub:
 At the top, you’ll see: “Publish to GitHub”.
 Click it,
 Sign in if needed,

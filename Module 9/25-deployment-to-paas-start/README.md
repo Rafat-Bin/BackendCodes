@@ -22,11 +22,11 @@ Sign up for a Render account if you don't have one already. You can use the free
 
 ### 2. Prepare the databases, static file serving, and environment variables so we can configure for differnent environments (development and production).
 
-Note: we've moved the `requirements.txt` file to the root of the project.
+Note: we've moved the `requirements.txt` file to the root of the project. 
 
 - So far in this course we've been using `sqlite` as our database, but now we're going to make our configuration flexible so that we can use a different database in production.
 
-- install required packages for postgres and save them to our `requirements.txt` file.
+- install required packages for postgres and save them to our `requirements.txt` file. Go insde project folder and type "pip install -r requirements.txt" all the requirements will be installed. 
 ```
 pip install psycopg2-binary
 pip install dj-database-url

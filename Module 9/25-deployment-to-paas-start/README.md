@@ -1,6 +1,6 @@
 # Deployment on a PaaS provider
 
-In this last example for the course we're goign to walk through how to deploy a django app to a PassProivder. Since [REnder.io](https://render.com/) is a popular and easy to use PaaS provider, which a free tier that is sufficient for small projects, we're going to use Render for this example. The process for deploying to other PaaS providers is similar, so you can use the same steps and just adjust for the specific provider you're using.
+In this last example for the course we're goign to walk through how to deploy a django app to a PassProivder (Platform as a Service). Since [REnder.io](https://render.com/) is a popular and easy to use PaaS provider, which a free tier that is sufficient for small projects, we're going to use Render for this example. The process for deploying to other PaaS providers is similar, so you can use the same steps and just adjust for the specific provider you're using.
 
 We're going to take oiur existing announcements project (from earlier in the course) to Render and deploy it so that it's accessible on the internet. This will involve some changes to our code to prepare it for deployment, as well as some configuration on the Render side to get it up and running.
 
@@ -22,11 +22,11 @@ Sign up for a Render account if you don't have one already. You can use the free
 
 ### 2. Prepare the databases, static file serving, and environment variables so we can configure for differnent environments (development and production).
 
-Note: we've moved the `requirements.txt` file to the root of the project.
+Note: we've moved the `requirements.txt` file to the root of the project. 
 
 - So far in this course we've been using `sqlite` as our database, but now we're going to make our configuration flexible so that we can use a different database in production.
 
-- install required packages for postgres and save them to our `requirements.txt` file.
+- install required packages for postgres and save them to our `requirements.txt` file. Go insde project folder and type "pip install -r requirements.txt" all the requirements will be installed. 
 ```
 pip install psycopg2-binary
 pip install dj-database-url
@@ -81,7 +81,7 @@ DATABASES = {
 }
 ```
 
-You can test this by taking a look at the shell and running the follwoing commands:
+You can test this by taking a look at the shell and running the follwoing commands: python manage.py shell and quit() to get out of shell.
 ```python
 from django.conf import settings
 print(settings.SECRET_KEY)
@@ -162,6 +162,25 @@ git remote add origin <remote_url>
 git branch -M main
 git push -u origin main
 ```
+
+or use vs code git extension
+
+1. Initialize Git:
+Click the Source Control icon (left sidebar),
+Click “Initialize Repository”
+
+2. Stage your files:
+You’ll see a list of files.
+Click the “+” (stage all) button
+
+3. Commit your code:
+Type a message like: Initial commit
+
+4.Publish to GitHub:
+At the top, you’ll see: “Publish to GitHub”.
+Click it,
+Sign in if needed,
+Choose: Public or Private.
 
 This is public but since we don't have any sensitive information in our code (since we use environment variables for that) it's fine to have it public. In a real project you would want to make sure to keep your code private if it contains sensitive information.
 
